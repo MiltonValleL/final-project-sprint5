@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-car_data = pd.read_csv('../final-project-sprint5/vehicles_us.csv') # leer los datos
+car_data = pd.read_csv('vehicles_us.csv') # leer los datos
 
 st.header('Proyecto Final del Sprint 5 - Entorno de Desarrollo Individual') # Crear el encabezado
 
