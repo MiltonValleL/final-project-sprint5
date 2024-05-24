@@ -7,27 +7,28 @@ car_data = pd.read_csv('../final-project-sprint5/vehicles_us.csv') # leer los da
 
 st.header('Proyecto Final del Sprint 5 - Entorno de Desarrollo Individual') # Crear el encabezado
 
-hist_button = st.button('Construir histograma') # crear un botón
+# crear una casilla de verificación
+build_histogram = st.checkbox('Construir un histograma por tipo de vehículo')
 
-if hist_button: # al hacer clic en el botón
+if build_histogram: # al hacer clic en el botón
     # escribir un mensaje
-    st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
+    st.write('Creación de un histograma para el conjunto de datos de la columna "type"')
 
     # crear un histograma
-    fig = px.histogram(car_data, x="model_year")
+    fig = px.histogram(car_data, x="type")
 
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
 
 
 # crear una casilla de verificación
-build_histogram = st.checkbox('Construir un histograma')
+build_scatter = st.checkbox('Construir un gráfico de dispersión')
 
-if build_histogram: # si la casilla de verificación está seleccionada
-    st.write('Construir un histograma para la columna type')
+if build_scatter: # si la casilla de verificación está seleccionada
+    st.write('Construir un gráfico de dispersión para la columna type')
 
     # se crea el histograma en plotly-express
-    fig = px.histogram(car_data, x='type')
+    fig = px.scatter(car_data, x='type', y='price')
 
     # mostramos el gráfico interactivo de Plotly-Express
     st.plotly_chart(fig, use_container_width=True)
