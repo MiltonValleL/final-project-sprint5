@@ -24,10 +24,12 @@ if hist_button: # al hacer clic en el botón
 build_histogram = st.checkbox('Construir un histograma')
 
 if build_histogram: # si la casilla de verificación está seleccionada
-    st.write('Construir un histograma para la columna odómetro')
+    st.write('Construir un histograma para la columna type')
 
     # se crea el histograma en plotly-express
     fig = px.histogram(car_data, x='type')
 
     # mostramos el gráfico interactivo de Plotly-Express
     st.plotly_chart(fig, use_container_width=True)
+
+    st.write("Muchas gracias por revisar la información, que tengas un buen día.")
